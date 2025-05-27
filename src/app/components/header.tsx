@@ -8,9 +8,10 @@ export default function Header() {
             </div>
             <nav>
                 <ul className="flex space-x-4">
-                    <Link href="/"><li><a>Inicio</a></li></Link>
-                    <Link href="about"><li><a>Sobre mí</a></li></Link>
-                    <Link href="/contact"><li><a>Contacto</a></li></Link>
+                    <Link href="/"><li><span>Inicio</span></li></Link>
+                    <Link href="/about"><li><span>Sobre mí</span></li></Link>
+                    <Link href="/contact"><li><span>Contacto</span></li></Link>
+                    <Link href="/posts"><li><span>Posts</span></li></Link>
                 </ul>
             </nav>
         </header>
