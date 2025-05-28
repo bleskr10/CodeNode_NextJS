@@ -7,12 +7,8 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function Post({
-    params,
-}: {
-    params: { id: string };
-}) {
-    const { id } = params;
+export default async function Post({ params }: { params: Promise<{ id: string; }> }) {
+    const { id } = await params;
     
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
     
