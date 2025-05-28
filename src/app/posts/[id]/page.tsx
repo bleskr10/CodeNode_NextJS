@@ -7,19 +7,15 @@ export async function generateStaticParams() {
     }));
 }
 
-interface PostProps {
+export default async function Post({
+    params,
+}: {
     params: { id: string };
-}
-
-export default async function Post({ params }: PostProps) {
+}) {
     const { id } = params;
-    if (!id) {
-        throw new Error('ID del post no proporcionado');
-    }
+    
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-    if (!res.ok) {
-        throw new Error('Error al cargar el post');
-    }
+    
     const data = await res.json();
 
     return (
