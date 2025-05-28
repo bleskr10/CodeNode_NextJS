@@ -7,11 +7,11 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function Post({
-    params,
-}: {
+interface PostProps {
     params: { id: string };
-}) {
+}
+
+export default async function Post({ params }: PostProps) {
     const { id } = params;
     if (!id) {
         throw new Error('ID del post no proporcionado');
